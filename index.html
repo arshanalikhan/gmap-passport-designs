@@ -337,7 +337,7 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-" onload="apply(this.closest('.row'))"></iframe>
+" onload="window.apply&&apply(this.closest('.row'))"></iframe>
 <div class="panel"><div class="no">1</div><div class="ptop"><label><input type="color" class="cm" value="#0891B2" oninput="apply(this.closest('.row'))">MCI colour <code class="hm">#0891B2</code></label>
 <label><input type="color" class="cd" value="#92400E" oninput="apply(this.closest('.row'))">Degradation colour <code class="hd">#92400E</code></label>
 <button class="rec" onclick="setRec(this)" title="MCI #0891B2 · DF #92400E · Mughal octagon jaali · strength 0.15 · blue lines #1500FF · yellow header #F2D35E · pale teal band #E3F2F6 · dumbbell">★ Recommended<span>MCI #0891B2 · DF #92400E · Mughal jaali 0.15 · blue lines · yellow header · pale teal band · dumbbell</span></button></div>
@@ -597,7 +597,7 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-" onload="apply(this.closest('.row'))"></iframe>
+" onload="window.apply&&apply(this.closest('.row'))"></iframe>
 <div class="panel"><div class="no">2</div><div class="ptop"><label><input type="color" class="cm" value="#0891B2" oninput="apply(this.closest('.row'))">MCI colour <code class="hm">#0891B2</code></label>
 <label><input type="color" class="cd" value="#92400E" oninput="apply(this.closest('.row'))">Degradation colour <code class="hd">#92400E</code></label>
 <button class="rec" onclick="setRec(this)" title="MCI #0891B2 · DF #92400E · Mughal octagon jaali · strength 0.15 · blue lines #1500FF · yellow header #F2D35E · pale teal band #E3F2F6 · dumbbell">★ Recommended<span>MCI #0891B2 · DF #92400E · Mughal jaali 0.15 · blue lines · yellow header · pale teal band · dumbbell</span></button></div>
@@ -676,4 +676,6 @@ function dup(b){const sec=b.closest('section'),row=sec.querySelector('.row'),c=s
  const l=c.querySelector('.link');l.checked=false;
  c.querySelector('.cm').value=row.querySelector('.cm').value;c.querySelector('.cd').value=row.querySelector('.cd').value;c.querySelector('.ch').value=row.querySelector('.ch').value;c.querySelector('.cb').value=row.querySelector('.cb').value;c.querySelector('.cpt').value=row.querySelector('.cpt').value;c.querySelector('.ts').value=row.querySelector('.ts').value;c.querySelector('.tf').value=row.querySelector('.tf').value;c.querySelector('.sf').value=row.querySelector('.sf').value;c.querySelector('.tw').value=row.querySelector('.tw').value;c.querySelector('.sw2').value=row.querySelector('.sw2').value;c.querySelector('.ti').value=row.querySelector('.ti').value;c.querySelector('.si').value=row.querySelector('.si').value;c.querySelector('.pat').value=row.querySelector('.pat').value;c.querySelector('.op').value=row.querySelector('.op').value;
  sec.after(c);c.scrollIntoView({behavior:'smooth',block:'start'})}
+
+document.querySelectorAll('.row').forEach(r=>{const d=r.querySelector('iframe').contentDocument;if(d&&d.readyState=='complete'&&d.querySelector('.hdr'))paint(r)});
 </script></body></html>
