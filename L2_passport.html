@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GMAP Material Passport Level 2</title>
+<style>
+  /* Two A3 landscape sheets: Level 2 (family, ranges) and Level 4 (one product with its EPD).
+     Replace every [ ... ] placeholder with the value named inside it. */
+  @page { size: 1120px 630px; margin: 0; }
+  :root{
+    --navy:#14365F; --navy2:#1C4479; --ink:#1B2430; --mute:#5B6573; --line:#D7DCE3; --soft:#EEF1F5;
+    --green:#1E8A58; --badge:#2E9E6B; --idc:#4A5878;
+    --co2:#3A4450; --co2bg:#E6E8EB; --co2bd:#A9AFB8;
+    --h2o:#2A6DB5; --h2obg:#E4EDF8; --h2obd:#93B7E3;
+    --en:#C47F1E;  --enbg:#F6ECDD; --enbd:#DDB070;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff;width:1120px;height:630px;overflow:hidden}
+  body{font-family:"Segoe UI","Source Sans 3",Arial,sans-serif;color:var(--ink);
+       -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .mono{font-family:Consolas,"IBM Plex Mono","Courier New",monospace}
+  .ph{border-bottom:1.5px dotted currentColor;padding:0 1px}
+
+  .sheet{width:1587px;height:1122px;position:relative;overflow:hidden;background:#F3F5F8;page-break-after:always;break-after:page}
+  .sheet:last-child{page-break-after:auto;break-after:auto}
+  .ttl{position:absolute;left:40px;top:26px}
+  .ttl h1{font-size:31px;font-weight:900;color:var(--navy);letter-spacing:.005em}
+  .ttl p{font-size:13.5px;color:var(--mute);margin-top:4px}
+  .pills{position:absolute;right:40px;top:36px;display:flex;gap:6px}
+  .pills span{border:1.5px solid var(--navy);color:var(--navy);border-radius:999px;padding:3px 11px;font-size:11.5px;font-weight:700}
+  .pills span.on{background:var(--navy);color:#fff}
+  .legend{position:absolute;left:40px;bottom:22px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:11.5px;color:var(--mute);width:400px}
+  .tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.04em;padding:2px 5px;border-radius:4px;color:#fff;vertical-align:1px}
+  .t-epd{background:var(--badge)} .t-db{background:var(--h2o)} .t-lit{background:var(--en)} .t-gmap{background:var(--idc)}
+
+  /* ---------- side columns ---------- */
+  .lcol,.rcol{position:absolute;width:392px;display:flex;flex-direction:column;gap:16px}
+  .lcol{left:40px;top:100px}
+  .rcol{left:1155px;top:108px;gap:22px}
+  .logo{display:flex;flex-direction:column;align-items:center;gap:6px;width:120px;margin-left:120px}
+  .logo .g{width:78px;height:78px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;
+           font-size:40px;font-weight:900;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .logo b{font-size:10px;letter-spacing:.22em;color:var(--navy)}
+
+  .box{background:#fff;border-radius:12px;border:1px solid #DDE2E8;box-shadow:0 1px 3px rgba(20,40,70,.10);overflow:hidden}
+  .box>header{display:flex;align-items:center;gap:12px;padding:11px 16px;color:#fff}
+  .box .ico{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.18);display:grid;place-items:center;flex:none}
+  .box .ico svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .box h3{font-size:16px;font-weight:800;letter-spacing:.01em;line-height:1.2}
+  .box h3 small{display:block;font-size:11px;font-weight:500;opacity:.92;letter-spacing:0}
+  .b-id>header{background:var(--idc)} .b-m>header{background:var(--green)}
+  .b-co2>header{background:var(--co2)} .b-h2o>header{background:var(--h2o)} .b-en>header{background:var(--en)}
+  .bd{padding:13px 16px 13px;font-size:12px;line-height:1.45}
+  .kv{display:grid;grid-template-columns:70px 1fr;gap:6px 10px;align-items:baseline}
+  .kv dt{font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--mute)}
+  .kv dd{font-size:12px}
+  .chip{font-family:Consolas,monospace;background:var(--soft);border-radius:4px;padding:1px 5px;font-size:11px;font-weight:700}
+  .calc{font-family:Consolas,monospace;background:var(--soft);border-radius:6px;padding:9px 12px;font-size:12.5px;font-weight:700;margin-top:11px;line-height:1.6}
+  .rows{margin-top:10px}
+  .rows div{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #E5E9EE;padding:5px 0;font-size:11.5px}
+  .rows div b{font-family:Consolas,monospace;font-size:12.5px;white-space:nowrap}
+  .foot{border-top:1px solid #E5E9EE;margin-top:10px;padding-top:8px;color:var(--mute);font-size:11px}
+  .warn{margin-top:10px;background:#FBF3DF;border:1px solid #EBCB7E;border-radius:6px;padding:7px 10px;font-size:11px}
+  .note{font-size:10.5px;color:var(--mute);font-style:italic;margin-top:8px;border-top:1px solid #E5E9EE;padding-top:7px}
+  .formula{font-size:19px;font-weight:800;color:var(--green);display:flex;align-items:center;gap:6px;margin:10px 0 6px}
+  .formula .fr{display:inline-flex;flex-direction:column;align-items:center;font-size:11px;line-height:1.1;color:var(--ink)}
+  .formula .fr i:first-child{border-bottom:1.3px solid var(--ink);padding:0 2px}
+  .formula .big{font-size:26px;font-weight:300;color:var(--ink)}
+  .defs{font-size:10.5px;color:var(--ink);line-height:1.45}
+
+  /* Level 4 MCI input tiles */
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+  .tile{border:1px solid var(--line);border-radius:6px;padding:3px 8px;display:grid;grid-template-columns:1fr auto;align-items:end;min-height:40px}
+  .tile s{text-decoration:none;font-size:9.5px;color:var(--mute);grid-column:1/3;line-height:1.15}
+  .tile em{font-size:13.5px;font-weight:800;color:var(--green);font-style:italic}
+  .tile em sub{font-size:9px}
+  .tile b{font-size:14px;text-align:right}
+  .tile u{grid-column:2;text-decoration:none;justify-self:end;font-size:8px;font-weight:700;background:#E7F3EC;color:var(--green);border-radius:3px;padding:0 4px;margin-top:1px}
+
+  /* ---------- centre card (same layout as the single passport template) ---------- */
+  .card{position:relative;left:0;top:0;width:1120px;height:630px;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+        background:#fff;display:flex;flex-direction:column;}
+  .hdr{height:150px;flex:none;padding:26px 30px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;position:relative}
+  .kick{font-size:21px;font-weight:800;letter-spacing:.16em;line-height:1}
+  .badge{position:absolute;right:28px;top:24px;background:var(--badge);color:#fff;border-radius:999px;padding:4px 10px;font-size:10.5px;letter-spacing:.12em}
+  .idblk{position:absolute;left:30px;right:30px;bottom:18px}
+  .idrow{display:flex;justify-content:flex-start;gap:18px;align-items:baseline}
+  .gid{font-size:28px;font-weight:700;letter-spacing:.01em;white-space:nowrap;line-height:1.1}
+  .gmap{font-size:11px;font-weight:700;letter-spacing:.22em;opacity:.85}
+  .sub{font-size:15px;font-weight:600;margin-top:8px;opacity:.95}
+  .cbody{padding:20px 30px 0;flex:1;display:grid;grid-template-columns:1fr 1.15fr;column-gap:36px;min-height:0}
+  .colL,.colR{display:flex;flex-direction:column;min-height:0}
+  .colR>.sec:first-child{margin-top:0}
+  .cbody h2{font-size:25px;font-weight:800;line-height:1.15}
+  .cbody h2 small{font-size:17px;font-weight:600;color:var(--mute);margin-left:4px}
+  .cnote{font-size:13px;color:var(--mute);margin-top:6px}
+  .facts{margin-top:20px;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:15px 16px 13px;
+         display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+  .facts dt{font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--mute)}
+  .facts dd{font-size:13.5px;font-weight:700;margin-top:3px}
+  .facts dd.reg{color:var(--navy2);font-weight:500}
+  .sec{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px}
+  .sec b{font-size:10.5px;letter-spacing:.2em;color:var(--navy)}
+  .sec span{font-size:11.5px;color:var(--mute)}
+  .val{margin-top:9px;height:64px;border-radius:9px;border:1.5px solid;display:flex;align-items:center;padding:0 18px 0 12px}
+  .val .ic{width:42px;height:42px;border-radius:8px;display:grid;place-items:center;flex:none}
+  .val .ic svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .val .nm{margin-left:22px;flex:1}
+  .val .nm b{display:block;font-size:15.5px}
+  .val .nm i{font-style:normal;font-size:12px;color:var(--mute)}
+  .val .num{font-size:26px;font-weight:800;white-space:nowrap}
+  .val .num small{font-size:13px;font-weight:500;margin-left:4px}
+  .s2 .val .num{font-size:24px}
+  .v-co2{background:var(--co2bg);border-color:var(--co2bd)} .v-co2 .ic{background:var(--co2)} .v-co2 .num{color:var(--co2)}
+  .v-h2o{background:var(--h2obg);border-color:var(--h2obd)} .v-h2o .ic{background:var(--h2o)} .v-h2o .num{color:var(--h2o)}
+  .v-en {background:var(--enbg);border-color:var(--enbd)}   .v-en .ic{background:var(--en)}   .v-en .num{color:var(--en)}
+  .mci{margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:16px 18px 14px}
+  .mci .top{display:flex;align-items:center}
+  .mci .ic{width:38px;height:38px;border-radius:8px;background:var(--green);display:grid;place-items:center;flex:none}
+  .mci .ic svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .mci .nm{margin-left:24px;flex:1}
+  .mci .nm b{display:block;font-size:15px}
+  .mci .nm i{font-style:normal;font-size:11.5px;color:var(--mute)}
+  .mci .num{font-size:31px;font-weight:800;color:var(--green);white-space:nowrap}
+  .s2 .mci .num{font-size:26px}
+  .bar{position:relative;height:12px;border-radius:6px;margin-top:14px;
+       background:linear-gradient(90deg,#9AA3AE 0%,#8FB7A6 40%,#3FA37A 75%,#1E8A58 100%)}
+  .mark{position:absolute;top:-5px;width:4px;height:22px;margin-left:-2px;border-radius:2px;
+        background:repeating-linear-gradient(#222 0 3px,transparent 3px 5px)}
+  .mark em{position:absolute;top:27px;left:50%;transform:translateX(-50%);font-style:normal;font-size:9.5px;white-space:nowrap;color:var(--mute)}
+  .mark.up em{top:-16px}
+  .band{position:absolute;top:-3px;height:18px;border:2px solid #0F5F3B;border-radius:5px}
+  .scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);margin-top:8px}
+  .s2 .bar{margin-top:20px}
+  .s2 .scale{margin-top:22px}
+  .s4 .legend{left:1155px}
+  .src{margin-top:auto;border-top:1px solid var(--line);padding:12px 0 22px;font-size:12px;color:var(--mute);line-height:1.5}
+  .src b{color:var(--ink)}
+
+  .df{margin-top:9px;border:1.5px solid #E2A99C;background:#F8E9E5;border-radius:10px;padding:12px 16px 10px}
+  .df .top{display:flex;align-items:center;gap:12px}
+  .df .ic{width:38px;height:38px;border-radius:8px;background:#B5452F;display:grid;place-items:center;flex:none}
+  .df .ic svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .df .nm{flex:1}.df .nm b{display:block;font-size:15px}.df .nm i{font-style:normal;font-size:11.5px;color:var(--mute)}
+  .df .num{font-size:26px;font-weight:800;color:#B5452F;white-space:nowrap}
+  .df .bar{background:linear-gradient(90deg,#1E8A58 0%,#E8C547 50%,#C0392B 100%)}
+  .df .band{border-color:#7A2A1C}
+  .env3{margin-top:9px;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .env3 .val{margin:0;height:auto;border:0;border-radius:0;display:grid;grid-template-columns:auto 1fr;column-gap:8px;align-items:center;padding:10px 12px}
+  .env3 .val+.val{border-left:1px solid var(--line)}
+  .env3 .val .ic{width:30px;height:30px;border-radius:7px}
+  .env3 .val .ic svg{width:16px;height:16px}
+  .env3 .val .nm{margin-left:0}
+  .env3 .val .nm b{font-size:13px;line-height:1.15}
+  .env3 .val .nm i{font-size:10.5px;display:block;line-height:1.2}
+  .env3 .val .num,.s2 .env3 .val .num{grid-column:1/-1;margin-top:7px;font-size:17px}
+  .env3 .val .num small{display:block;margin:1px 0 0;font-size:10.5px}
+  .colR .mci{margin-top:9px;padding:12px 16px 10px}
+  .colR>.facts:first-child{margin-top:0}
+  .colR .sec{margin-top:12px}
+  .colR .mci{padding:10px 16px 8px}
+  .s2 .colR .bar{margin-top:18px}
+  .s2 .colR .scale{margin-top:16px}
+  .colR .df{padding:10px 16px 8px}
+  .colR .df .top{margin-top:0}
+  .mci{background:#EEF7F2;border-color:#B7DCC8}
+  /* leader lines */
+  svg.links{position:absolute;left:0;top:0;width:1587px;height:1122px;pointer-events:none;overflow:visible}
+  .hdr::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22240%22%20height%3D%22207.8%22%3E%3Cpath%20d%3D%22M116.2%206.5L120.0%200.0L123.8%206.5ZM112.5%2013.0L116.2%206.5L120.0%2013.0ZM120.0%2013.0L123.8%206.5L127.5%2013.0ZM108.8%2019.5L112.5%2013.0L116.2%2019.5ZM105.0%2026.0L108.8%2019.5L112.5%2026.0ZM112.5%2026.0L116.2%2019.5L120.0%2026.0ZM123.8%2019.5L127.5%2013.0L131.2%2019.5ZM120.0%2026.0L123.8%2019.5L127.5%2026.0ZM127.5%2026.0L131.2%2019.5L135.0%2026.0ZM101.2%2032.5L105.0%2026.0L108.8%2032.5ZM97.5%2039.0L101.2%2032.5L105.0%2039.0ZM105.0%2039.0L108.8%2032.5L112.5%2039.0ZM93.8%2045.5L97.5%2039.0L101.2%2045.5ZM90.0%2052.0L93.8%2045.5L97.5%2052.0ZM97.5%2052.0L101.2%2045.5L105.0%2052.0ZM108.8%2045.5L112.5%2039.0L116.2%2045.5ZM105.0%2052.0L108.8%2045.5L112.5%2052.0ZM112.5%2052.0L116.2%2045.5L120.0%2052.0ZM131.2%2032.5L135.0%2026.0L138.8%2032.5ZM127.5%2039.0L131.2%2032.5L135.0%2039.0ZM135.0%2039.0L138.8%2032.5L142.5%2039.0ZM123.8%2045.5L127.5%2039.0L131.2%2045.5ZM120.0%2052.0L123.8%2045.5L127.5%2052.0ZM127.5%2052.0L131.2%2045.5L135.0%2052.0ZM138.8%2045.5L142.5%2039.0L146.2%2045.5ZM135.0%2052.0L138.8%2045.5L142.5%2052.0ZM142.5%2052.0L146.2%2045.5L150.0%2052.0ZM86.2%2058.5L90.0%2052.0L93.8%2058.5ZM82.5%2065.0L86.2%2058.5L90.0%2065.0ZM90.0%2065.0L93.8%2058.5L97.5%2065.0ZM78.8%2071.4L82.5%2065.0L86.2%2071.4ZM75.0%2077.9L78.8%2071.4L82.5%2077.9ZM82.5%2077.9L86.2%2071.4L90.0%2077.9ZM93.8%2071.4L97.5%2065.0L101.2%2071.4ZM90.0%2077.9L93.8%2071.4L97.5%2077.9ZM97.5%2077.9L101.2%2071.4L105.0%2077.9ZM71.2%2084.4L75.0%2077.9L78.8%2084.4ZM67.5%2090.9L71.2%2084.4L75.0%2090.9ZM75.0%2090.9L78.8%2084.4L82.5%2090.9ZM63.8%2097.4L67.5%2090.9L71.2%2097.4ZM60.0%20103.9L63.8%2097.4L67.5%20103.9ZM67.5%20103.9L71.2%2097.4L75.0%20103.9ZM78.8%2097.4L82.5%2090.9L86.2%2097.4ZM75.0%20103.9L78.8%2097.4L82.5%20103.9ZM82.5%20103.9L86.2%2097.4L90.0%20103.9ZM101.2%2084.4L105.0%2077.9L108.8%2084.4ZM97.5%2090.9L101.2%2084.4L105.0%2090.9ZM105.0%2090.9L108.8%2084.4L112.5%2090.9ZM93.8%2097.4L97.5%2090.9L101.2%2097.4ZM90.0%20103.9L93.8%2097.4L97.5%20103.9ZM97.5%20103.9L101.2%2097.4L105.0%20103.9ZM108.8%2097.4L112.5%2090.9L116.2%2097.4ZM105.0%20103.9L108.8%2097.4L112.5%20103.9ZM112.5%20103.9L116.2%2097.4L120.0%20103.9ZM146.2%2058.5L150.0%2052.0L153.8%2058.5ZM142.5%2065.0L146.2%2058.5L150.0%2065.0ZM150.0%2065.0L153.8%2058.5L157.5%2065.0ZM138.8%2071.4L142.5%2065.0L146.2%2071.4ZM135.0%2077.9L138.8%2071.4L142.5%2077.9ZM142.5%2077.9L146.2%2071.4L150.0%2077.9ZM153.8%2071.4L157.5%2065.0L161.2%2071.4ZM150.0%2077.9L153.8%2071.4L157.5%2077.9ZM157.5%2077.9L161.2%2071.4L165.0%2077.9ZM131.2%2084.4L135.0%2077.9L138.8%2084.4ZM127.5%2090.9L131.2%2084.4L135.0%2090.9ZM135.0%2090.9L138.8%2084.4L142.5%2090.9ZM123.8%2097.4L127.5%2090.9L131.2%2097.4ZM120.0%20103.9L123.8%2097.4L127.5%20103.9ZM127.5%20103.9L131.2%2097.4L135.0%20103.9ZM138.8%2097.4L142.5%2090.9L146.2%2097.4ZM135.0%20103.9L138.8%2097.4L142.5%20103.9ZM142.5%20103.9L146.2%2097.4L150.0%20103.9ZM161.2%2084.4L165.0%2077.9L168.8%2084.4ZM157.5%2090.9L161.2%2084.4L165.0%2090.9ZM165.0%2090.9L168.8%2084.4L172.5%2090.9ZM153.8%2097.4L157.5%2090.9L161.2%2097.4ZM150.0%20103.9L153.8%2097.4L157.5%20103.9ZM157.5%20103.9L161.2%2097.4L165.0%20103.9ZM168.8%2097.4L172.5%2090.9L176.2%2097.4ZM165.0%20103.9L168.8%2097.4L172.5%20103.9ZM172.5%20103.9L176.2%2097.4L180.0%20103.9ZM56.2%20110.4L60.0%20103.9L63.8%20110.4ZM52.5%20116.9L56.2%20110.4L60.0%20116.9ZM60.0%20116.9L63.8%20110.4L67.5%20116.9ZM48.8%20123.4L52.5%20116.9L56.2%20123.4ZM45.0%20129.9L48.8%20123.4L52.5%20129.9ZM52.5%20129.9L56.2%20123.4L60.0%20129.9ZM63.8%20123.4L67.5%20116.9L71.2%20123.4ZM60.0%20129.9L63.8%20123.4L67.5%20129.9ZM67.5%20129.9L71.2%20123.4L75.0%20129.9ZM41.2%20136.4L45.0%20129.9L48.8%20136.4ZM37.5%20142.9L41.2%20136.4L45.0%20142.9ZM45.0%20142.9L48.8%20136.4L52.5%20142.9ZM33.8%20149.4L37.5%20142.9L41.2%20149.4ZM30.0%20155.9L33.8%20149.4L37.5%20155.9ZM37.5%20155.9L41.2%20149.4L45.0%20155.9ZM48.8%20149.4L52.5%20142.9L56.2%20149.4ZM45.0%20155.9L48.8%20149.4L52.5%20155.9ZM52.5%20155.9L56.2%20149.4L60.0%20155.9ZM71.2%20136.4L75.0%20129.9L78.8%20136.4ZM67.5%20142.9L71.2%20136.4L75.0%20142.9ZM75.0%20142.9L78.8%20136.4L82.5%20142.9ZM63.8%20149.4L67.5%20142.9L71.2%20149.4ZM60.0%20155.9L63.8%20149.4L67.5%20155.9ZM67.5%20155.9L71.2%20149.4L75.0%20155.9ZM78.8%20149.4L82.5%20142.9L86.2%20149.4ZM75.0%20155.9L78.8%20149.4L82.5%20155.9ZM82.5%20155.9L86.2%20149.4L90.0%20155.9ZM26.2%20162.4L30.0%20155.9L33.8%20162.4ZM22.5%20168.9L26.2%20162.4L30.0%20168.9ZM30.0%20168.9L33.8%20162.4L37.5%20168.9ZM18.8%20175.4L22.5%20168.9L26.2%20175.4ZM15.0%20181.9L18.8%20175.4L22.5%20181.9ZM22.5%20181.9L26.2%20175.4L30.0%20181.9ZM33.8%20175.4L37.5%20168.9L41.2%20175.4ZM30.0%20181.9L33.8%20175.4L37.5%20181.9ZM37.5%20181.9L41.2%20175.4L45.0%20181.9ZM11.2%20188.4L15.0%20181.9L18.8%20188.4ZM7.5%20194.9L11.2%20188.4L15.0%20194.9ZM15.0%20194.9L18.8%20188.4L22.5%20194.9ZM3.8%20201.4L7.5%20194.9L11.2%20201.4ZM0.0%20207.8L3.8%20201.4L7.5%20207.8ZM7.5%20207.8L11.2%20201.4L15.0%20207.8ZM18.8%20201.4L22.5%20194.9L26.2%20201.4ZM15.0%20207.8L18.8%20201.4L22.5%20207.8ZM22.5%20207.8L26.2%20201.4L30.0%20207.8ZM41.2%20188.4L45.0%20181.9L48.8%20188.4ZM37.5%20194.9L41.2%20188.4L45.0%20194.9ZM45.0%20194.9L48.8%20188.4L52.5%20194.9ZM33.8%20201.4L37.5%20194.9L41.2%20201.4ZM30.0%20207.8L33.8%20201.4L37.5%20207.8ZM37.5%20207.8L41.2%20201.4L45.0%20207.8ZM48.8%20201.4L52.5%20194.9L56.2%20201.4ZM45.0%20207.8L48.8%20201.4L52.5%20207.8ZM52.5%20207.8L56.2%20201.4L60.0%20207.8ZM86.2%20162.4L90.0%20155.9L93.8%20162.4ZM82.5%20168.9L86.2%20162.4L90.0%20168.9ZM90.0%20168.9L93.8%20162.4L97.5%20168.9ZM78.8%20175.4L82.5%20168.9L86.2%20175.4ZM75.0%20181.9L78.8%20175.4L82.5%20181.9ZM82.5%20181.9L86.2%20175.4L90.0%20181.9ZM93.8%20175.4L97.5%20168.9L101.2%20175.4ZM90.0%20181.9L93.8%20175.4L97.5%20181.9ZM97.5%20181.9L101.2%20175.4L105.0%20181.9ZM71.2%20188.4L75.0%20181.9L78.8%20188.4ZM67.5%20194.9L71.2%20188.4L75.0%20194.9ZM75.0%20194.9L78.8%20188.4L82.5%20194.9ZM63.8%20201.4L67.5%20194.9L71.2%20201.4ZM60.0%20207.8L63.8%20201.4L67.5%20207.8ZM67.5%20207.8L71.2%20201.4L75.0%20207.8ZM78.8%20201.4L82.5%20194.9L86.2%20201.4ZM75.0%20207.8L78.8%20201.4L82.5%20207.8ZM82.5%20207.8L86.2%20201.4L90.0%20207.8ZM101.2%20188.4L105.0%20181.9L108.8%20188.4ZM97.5%20194.9L101.2%20188.4L105.0%20194.9ZM105.0%20194.9L108.8%20188.4L112.5%20194.9ZM93.8%20201.4L97.5%20194.9L101.2%20201.4ZM90.0%20207.8L93.8%20201.4L97.5%20207.8ZM97.5%20207.8L101.2%20201.4L105.0%20207.8ZM108.8%20201.4L112.5%20194.9L116.2%20201.4ZM105.0%20207.8L108.8%20201.4L112.5%20207.8ZM112.5%20207.8L116.2%20201.4L120.0%20207.8ZM176.2%20110.4L180.0%20103.9L183.8%20110.4ZM172.5%20116.9L176.2%20110.4L180.0%20116.9ZM180.0%20116.9L183.8%20110.4L187.5%20116.9ZM168.8%20123.4L172.5%20116.9L176.2%20123.4ZM165.0%20129.9L168.8%20123.4L172.5%20129.9ZM172.5%20129.9L176.2%20123.4L180.0%20129.9ZM183.8%20123.4L187.5%20116.9L191.2%20123.4ZM180.0%20129.9L183.8%20123.4L187.5%20129.9ZM187.5%20129.9L191.2%20123.4L195.0%20129.9ZM161.2%20136.4L165.0%20129.9L168.8%20136.4ZM157.5%20142.9L161.2%20136.4L165.0%20142.9ZM165.0%20142.9L168.8%20136.4L172.5%20142.9ZM153.8%20149.4L157.5%20142.9L161.2%20149.4ZM150.0%20155.9L153.8%20149.4L157.5%20155.9ZM157.5%20155.9L161.2%20149.4L165.0%20155.9ZM168.8%20149.4L172.5%20142.9L176.2%20149.4ZM165.0%20155.9L168.8%20149.4L172.5%20155.9ZM172.5%20155.9L176.2%20149.4L180.0%20155.9ZM191.2%20136.4L195.0%20129.9L198.8%20136.4ZM187.5%20142.9L191.2%20136.4L195.0%20142.9ZM195.0%20142.9L198.8%20136.4L202.5%20142.9ZM183.8%20149.4L187.5%20142.9L191.2%20149.4ZM180.0%20155.9L183.8%20149.4L187.5%20155.9ZM187.5%20155.9L191.2%20149.4L195.0%20155.9ZM198.8%20149.4L202.5%20142.9L206.2%20149.4ZM195.0%20155.9L198.8%20149.4L202.5%20155.9ZM202.5%20155.9L206.2%20149.4L210.0%20155.9ZM146.2%20162.4L150.0%20155.9L153.8%20162.4ZM142.5%20168.9L146.2%20162.4L150.0%20168.9ZM150.0%20168.9L153.8%20162.4L157.5%20168.9ZM138.8%20175.4L142.5%20168.9L146.2%20175.4ZM135.0%20181.9L138.8%20175.4L142.5%20181.9ZM142.5%20181.9L146.2%20175.4L150.0%20181.9ZM153.8%20175.4L157.5%20168.9L161.2%20175.4ZM150.0%20181.9L153.8%20175.4L157.5%20181.9ZM157.5%20181.9L161.2%20175.4L165.0%20181.9ZM131.2%20188.4L135.0%20181.9L138.8%20188.4ZM127.5%20194.9L131.2%20188.4L135.0%20194.9ZM135.0%20194.9L138.8%20188.4L142.5%20194.9ZM123.8%20201.4L127.5%20194.9L131.2%20201.4ZM120.0%20207.8L123.8%20201.4L127.5%20207.8ZM127.5%20207.8L131.2%20201.4L135.0%20207.8ZM138.8%20201.4L142.5%20194.9L146.2%20201.4ZM135.0%20207.8L138.8%20201.4L142.5%20207.8ZM142.5%20207.8L146.2%20201.4L150.0%20207.8ZM161.2%20188.4L165.0%20181.9L168.8%20188.4ZM157.5%20194.9L161.2%20188.4L165.0%20194.9ZM165.0%20194.9L168.8%20188.4L172.5%20194.9ZM153.8%20201.4L157.5%20194.9L161.2%20201.4ZM150.0%20207.8L153.8%20201.4L157.5%20207.8ZM157.5%20207.8L161.2%20201.4L165.0%20207.8ZM168.8%20201.4L172.5%20194.9L176.2%20201.4ZM165.0%20207.8L168.8%20201.4L172.5%20207.8ZM172.5%20207.8L176.2%20201.4L180.0%20207.8ZM206.2%20162.4L210.0%20155.9L213.8%20162.4ZM202.5%20168.9L206.2%20162.4L210.0%20168.9ZM210.0%20168.9L213.8%20162.4L217.5%20168.9ZM198.8%20175.4L202.5%20168.9L206.2%20175.4ZM195.0%20181.9L198.8%20175.4L202.5%20181.9ZM202.5%20181.9L206.2%20175.4L210.0%20181.9ZM213.8%20175.4L217.5%20168.9L221.2%20175.4ZM210.0%20181.9L213.8%20175.4L217.5%20181.9ZM217.5%20181.9L221.2%20175.4L225.0%20181.9ZM191.2%20188.4L195.0%20181.9L198.8%20188.4ZM187.5%20194.9L191.2%20188.4L195.0%20194.9ZM195.0%20194.9L198.8%20188.4L202.5%20194.9ZM183.8%20201.4L187.5%20194.9L191.2%20201.4ZM180.0%20207.8L183.8%20201.4L187.5%20207.8ZM187.5%20207.8L191.2%20201.4L195.0%20207.8ZM198.8%20201.4L202.5%20194.9L206.2%20201.4ZM195.0%20207.8L198.8%20201.4L202.5%20207.8ZM202.5%20207.8L206.2%20201.4L210.0%20207.8ZM221.2%20188.4L225.0%20181.9L228.8%20188.4ZM217.5%20194.9L221.2%20188.4L225.0%20194.9ZM225.0%20194.9L228.8%20188.4L232.5%20194.9ZM213.8%20201.4L217.5%20194.9L221.2%20201.4ZM210.0%20207.8L213.8%20201.4L217.5%20207.8ZM217.5%20207.8L221.2%20201.4L225.0%20207.8ZM228.8%20201.4L232.5%20194.9L236.2%20201.4ZM225.0%20207.8L228.8%20201.4L232.5%20207.8ZM232.5%20207.8L236.2%20201.4L240.0%20207.8Z%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-opacity%3D%22.5%22%20stroke-width%3D%22.8%22/%3E%3C/svg%3E") right -20px top -10px/240px auto repeat-x;opacity:.22;
+    -webkit-mask-image:linear-gradient(90deg,transparent 15%,#000 70%);mask-image:linear-gradient(90deg,transparent 15%,#000 70%);pointer-events:none}
+  .hdr>*{position:relative;z-index:1} .hdr>.badge,.hdr>.idblk{position:absolute}
+
+  /* band layout: id on one line, name+facts band, sources footer */
+  .idrow .sub{margin:0 0 0 6px;font-size:15px}
+  .pband{margin:16px 30px 0;display:grid;grid-template-columns:1fr 1.15fr;column-gap:36px;align-items:center;background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+  .pband h2{font-size:23px;font-weight:800;line-height:1.15}
+  .pband h2 small{font-size:16px;font-weight:600;color:var(--mute);margin-left:4px}
+  .pband .cnote{margin-top:4px}
+  .pband .facts{margin:0!important;background:none;border:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,auto));gap:4px 22px}
+  .cbody{padding-top:4px}
+  .cbody .colL>.sec:first-child,.cbody .colR>.sec:first-child{margin-top:12px}
+  .colL .val{margin-top:8px}
+  .card>.src{margin:auto 30px 0;padding:9px 0 14px;font-size:11.5px}
+  .card>.src br{display:none}
+  .pband h2 small.unit{font-size:14px;font-weight:600;margin-left:6px}
+  .pband .bR .cnote{margin:8px 0 0}
+  /* env values span from MCI top to DF bottom, equal gaps */
+  .cbody{flex:none;align-items:stretch}
+  .colL .val{flex:1 1 0;height:auto;min-height:56px;margin-top:9px}
+  .colL .val+.val{margin-top:10px}
+  /* range markers: solid band, median dot, no dashed lines */
+  .bar .band{top:-4px;height:20px;border:2px solid;border-radius:10px;background:rgba(255,255,255,.28);box-shadow:0 1px 3px rgba(0,0,0,.18)}
+  .bar .mark{background:none;width:0;margin-left:0;top:0;height:12px}
+  .bar .mark.up,.bar>.mark:only-child{width:14px;height:14px;top:-1px;margin-left:-7px;border-radius:50%;background:#fff;border:3px solid var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .bar .mark em{top:21px;font-size:9.5px;font-weight:600;letter-spacing:.02em}
+  .bar .mark.up em{top:-20px;color:var(--navy)}
+  .bar>.mark:only-child em{top:18px}
+  .s2 .colR .scale{margin-top:22px}
+</style>
+</head>
+<body class="s2">
+<div class="card">
+    <div class="hdr">
+      <div class="kick">MATERIAL PASSPORT</div>
+      <div class="badge mono">FAMILY · RANGES</div>
+      <div class="idblk">
+        <div class="idrow"><div class="gid mono"><span class="ph">[M CC.TT]</span></div><div class="gmap">GMAP ID</div><div class="sub">· L1 <span class="ph">[Level 1 category]</span> · L2 <span class="ph">[Level 2 type]</span></div></div>
+      </div>
+    </div>
+    <div class="pband"><div class="bL"><h2 data-anchor="id"><span class="ph">[Level 2 type name]</span> <small>family</small> <small class="unit">· per <span class="ph">[unit]</span> of <span class="ph">[material]</span></small></h2></div><div class="bR"><dl class="facts">
+        <div><dt>MATERIALS (LEVEL 4)</dt><dd><span class="ph">[n]</span></dd></div>
+        <div><dt>EPDS IN FAMILY</dt><dd><span class="ph">[n]</span> · <span class="ph">[country, validity]</span></dd></div>
+        
+      </dl><p class="cnote"><span class="ph">[what the family covers, e.g. sheets, profiles, sections …]</span></p></div></div>
+    <div class="cbody">
+     <div class="colL">
+      <div class="sec"><b>ENVIRONMENTAL VALUES</b><span>range per <span class="ph">[unit]</span> · product stage A1–A3</span></div>
+      <div class="val v-en" data-anchor="en">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <div class="nm"><b>Embodied energy</b><i>median <span class="ph">[0]</span> · n = <span class="ph">[n]</span></i></div>
+        <div class="num"><span class="ph">[0.0]</span> – <span class="ph">[0]</span><small class="mono">MJ</small></div>
+      </div>
+      <div class="val v-co2" data-anchor="co2">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 9.2 4.5 4.5 0 0 0 7 18z"/></svg></div>
+        <div class="nm"><b>Embodied carbon</b><i>median <span class="ph">[0.0]</span> · n = <span class="ph">[n]</span></i></div>
+        <div class="num"><span class="ph">[0.00]</span> – <span class="ph">[0.00]</span><small class="mono">kg CO₂e</small></div>
+      </div>
+      <div class="val v-h2o" data-anchor="h2o">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/></svg></div>
+        <div class="nm"><b>Embodied water</b><i>median <span class="ph">[0.0]</span> · n = <span class="ph">[n]</span></i></div>
+        <div class="num"><span class="ph">[0.00]</span> – <span class="ph">[0.00]</span><small class="mono">litres</small></div>
+      </div>
+     </div>
+     <div class="colR">
+      <div class="sec"><b>CIRCULARITY</b><span>Ellen MacArthur Foundation scale</span></div>
+      <div class="mci" data-anchor="mci">
+        <div class="top">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v5h-5"/></svg></div>
+          <div class="nm"><b>Material Circularity Indicator</b><i>MCI range for the family · <span class="ph">[n]</span> materials</i></div>
+          <div class="num"><span class="ph">[0.00]</span> – <span class="ph">[0.00]</span></div>
+        </div>
+        <div class="bar">
+          <div class="band" style="left:38%;width:42%"></div>
+          <div class="mark" style="left:38%"><em>[min]</em></div>
+          <div class="mark up" style="left:55%"><em>[median]</em></div>
+          <div class="mark" style="left:80%"><em>[max]</em></div>
+        </div>
+        <div class="scale mono"><span>0.1 · fully linear</span><span>1.0 · fully circular</span></div>
+      </div>
+      <div class="sec"><b>DEGRADATION</b><span>at <span class="ph">[n]</span> years · <span class="ph">[climate zone]</span></span></div>
+      <div class="df" data-anchor="df">
+        <div class="top">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div class="nm"><b>Degradation Factor (DF)</b><i>DF range for the family · <span class="ph">[location]</span></i></div>
+          <div class="num"><span class="ph">[0.00]</span> – <span class="ph">[0.00]</span></div>
+        </div>
+        <div class="bar">
+          <div class="band" style="left:20%;width:35%"></div>
+          <div class="mark" style="left:20%"><em>[min]</em></div>
+          <div class="mark up" style="left:35%"><em>[median]</em></div>
+          <div class="mark" style="left:55%"><em>[max]</em></div>
+        </div>
+        <div class="scale mono"><span>0 · as new</span><span>1 · end of life</span></div>
+      </div>
+     </div>
+    </div>
+  <div class="src">Sources: <b><span class="ph">[n]</span> <span class="ph">[material]</span> EPDs</b> (<span class="ph">[manufacturers × count]</span>), EN 15804.<br>
+        Level 2 covers <span class="ph">[n]</span> different products, so one exact number would be wrong for most of them. See the Level 4 passport for exact values.</div>
+  </div>
+</body>
+</html>
