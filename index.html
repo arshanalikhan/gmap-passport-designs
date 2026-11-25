@@ -294,7 +294,7 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
   .colL .val .nm{margin-left:14px}.colL .val .num{font-size:22px!important}.colL .val{padding-right:14px}
   /* equal 22px gutter: top of band, left, right */
   .pband{margin:22px 22px 0!important}.cbody{padding-left:22px!important;padding-right:22px!important}.card&gt;.src{margin-left:22px!important;margin-right:22px!important}
-  .colL .val{align-items:center!important}.colL .val .nm{display:flex;flex-direction:column}.colL .val .nm i{line-height:16px}.colL .val .num{line-height:1;padding-top:15px}
+  .colL .val{align-items:center!important}.colL .val .vb{flex:1;display:flex;align-items:last baseline;min-width:0}.colL .val .vb .nm{flex:1}.colL .val .num{line-height:1.1}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class=&quot;s2&quot;&gt;
@@ -316,18 +316,18 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
       &lt;div class=&quot;sec&quot;&gt;&lt;b&gt;ENVIRONMENTAL VALUES&lt;/b&gt;&lt;span&gt;range per &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt; · Product Stage A1–A3&lt;/span&gt;&lt;/div&gt;
       &lt;div class=&quot;val v-en&quot; data-anchor=&quot;en&quot;&gt;
         &lt;div class=&quot;ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M13 2 4 14h7l-1 8 9-12h-7z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
-        &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Energy&lt;/b&gt;&lt;i&gt;median &lt;span class=&quot;ph&quot;&gt;[0]&lt;/span&gt; · n = &lt;span class=&quot;ph&quot;&gt;[n]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;MJ&lt;/small&gt;&lt;/div&gt;
+        &lt;div class=&quot;vb&quot;&gt;&lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Energy&lt;/b&gt;&lt;i&gt;median &lt;span class=&quot;ph&quot;&gt;[0]&lt;/span&gt; · n = &lt;span class=&quot;ph&quot;&gt;[n]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;MJ&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;val v-co2&quot; data-anchor=&quot;co2&quot;&gt;
         &lt;div class=&quot;ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 9.2 4.5 4.5 0 0 0 7 18z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
-        &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Carbon&lt;/b&gt;&lt;i&gt;median &lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt; · n = &lt;span class=&quot;ph&quot;&gt;[n]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;kg CO₂e&lt;/small&gt;&lt;/div&gt;
+        &lt;div class=&quot;vb&quot;&gt;&lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Carbon&lt;/b&gt;&lt;i&gt;median &lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt; · n = &lt;span class=&quot;ph&quot;&gt;[n]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;kg CO₂e&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;val v-h2o&quot; data-anchor=&quot;h2o&quot;&gt;
         &lt;div class=&quot;ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
-        &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Water&lt;/b&gt;&lt;i&gt;median &lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt; · n = &lt;span class=&quot;ph&quot;&gt;[n]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;litres&lt;/small&gt;&lt;/div&gt;
+        &lt;div class=&quot;vb&quot;&gt;&lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Water&lt;/b&gt;&lt;i&gt;median &lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt; · n = &lt;span class=&quot;ph&quot;&gt;[n]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;litres&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
      &lt;/div&gt;
      &lt;div class=&quot;colR&quot;&gt;
@@ -572,7 +572,7 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
   .colL .val .nm{margin-left:14px}.colL .val .num{font-size:22px!important}.colL .val .num small{font-size:11.5px;min-width:118px!important}.colL .val{padding-right:14px}
   /* equal 22px gutter: top of band, left, right */
   .pband{margin:22px 22px 0!important}.cbody{padding-left:22px!important;padding-right:22px!important}.card&gt;.src{margin-left:22px!important;margin-right:22px!important}
-  .colL .val{align-items:center!important}.colL .val .nm{display:flex;flex-direction:column}.colL .val .nm i{line-height:16px}.colL .val .num{line-height:1;padding-top:15px}
+  .colL .val{align-items:center!important}.colL .val .vb{flex:1;display:flex;align-items:last baseline;min-width:0}.colL .val .vb .nm{flex:1}.colL .val .num{line-height:1.1}
   .pband .facts dd.reg{color:inherit!important}
 &lt;/style&gt;
 &lt;/head&gt;
@@ -596,18 +596,18 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
       &lt;div class=&quot;sec&quot;&gt;&lt;b&gt;ENVIRONMENTAL VALUES&lt;/b&gt;&lt;span&gt;per &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt; · Product Stage A1–A3&lt;/span&gt;&lt;/div&gt;
       &lt;div class=&quot;val v-en&quot; data-anchor=&quot;en&quot;&gt;
         &lt;div class=&quot;ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M13 2 4 14h7l-1 8 9-12h-7z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
-        &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Energy&lt;/b&gt;&lt;i&gt;PERT + PENRT&lt;/i&gt;&lt;/div&gt;
-        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;MJ / &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/small&gt;&lt;/div&gt;
+        &lt;div class=&quot;vb&quot;&gt;&lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Energy&lt;/b&gt;&lt;i&gt;PERT + PENRT&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;MJ / &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;val v-co2&quot; data-anchor=&quot;co2&quot;&gt;
         &lt;div class=&quot;ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 9.2 4.5 4.5 0 0 0 7 18z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
-        &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Carbon&lt;/b&gt;&lt;i&gt;GWP-total&lt;/i&gt;&lt;/div&gt;
-        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;kg CO₂e / &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/small&gt;&lt;/div&gt;
+        &lt;div class=&quot;vb&quot;&gt;&lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Carbon&lt;/b&gt;&lt;i&gt;GWP-total&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;kg CO₂e / &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;val v-h2o&quot; data-anchor=&quot;h2o&quot;&gt;
         &lt;div class=&quot;ic&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
-        &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Water&lt;/b&gt;&lt;i&gt;FW · &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; litres per &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
-        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00000]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;m³ / &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/small&gt;&lt;/div&gt;
+        &lt;div class=&quot;vb&quot;&gt;&lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Embodied Water&lt;/b&gt;&lt;i&gt;FW · &lt;span class=&quot;ph&quot;&gt;[0.00]&lt;/span&gt; litres per &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.00000]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;m³ / &lt;span class=&quot;ph&quot;&gt;[unit]&lt;/span&gt;&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
       &lt;/div&gt;
      &lt;/div&gt;
      &lt;div class=&quot;colR&quot;&gt;
