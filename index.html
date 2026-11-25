@@ -82,6 +82,12 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
 .dd summary .sp{font-size:11px}
 .dd summary .sm{flex:1;min-width:0}.dd summary code{margin-left:auto;white-space:nowrap;font-size:12px}
 .dd summary .ssf{font-size:14px;color:#14365F}
+.dd summary{gap:8px;align-items:center}
+.dd summary::after{flex:none}
+.dd summary .sm{overflow:hidden}
+.chip{flex:none}
+.dd summary code{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:11.5px}
+.dd summary .shd{white-space:normal;line-height:1.3;text-align:right}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@400;700;900&family=Raleway:wght@400;700;900&family=Oswald:wght@400;700;900&family=Bebas+Neue&family=Anton&family=Archivo+Black&family=Playfair+Display:wght@400;700;900&family=Cinzel:wght@400;700;900&family=Roboto+Slab:wght@400;700;900&family=DM+Serif+Display&display=swap">
 </head><body>
 <section><h2>1 · Level 2 · with DF</h2><div class="row"><iframe srcdoc="&lt;!doctype html&gt;
@@ -671,7 +677,7 @@ function rscss(row,m,d){const t=RS[+row.querySelector('.rsv').value]||'';return 
 function setRS(b,i){const row=b.closest('.row');row.querySelector('.rsv').value=i;apply(row)}
 function lum(h){const n=parseInt(h.slice(1),16);return(0.299*(n>>16)+0.587*(n>>8&255)+0.114*(n&255))/255}
 function hbcss(row){const h=row.querySelector('.ch').value,b=row.querySelector('.cb').value;
- row.querySelector('.hh').textContent=h.toUpperCase();row.querySelector('.hb').textContent=b.toUpperCase();row.querySelector('.chh').style.background=h;{row.querySelector('.chg').style.background=h;const i=+row.querySelector('.pat').value,tf=row.querySelector('.tf:not(.sf)').value;row.querySelector('.shd').textContent=[i<0?'No pattern':PATS[i].n,Math.round(row.querySelector('.op').value*100)+'%',row.querySelector('.ts').value+'px',tf=='Default'?'':tf].filter(Boolean).join(' · ')}{const sf=row.querySelector('.sf').value,e=row.querySelector('.ssf'),w=row.querySelector('[data-for=sw2] .on'),it=row.querySelector('.si').value;e.textContent=sf+(w&&w.dataset.w?' · '+w.textContent:'')+(it?' · Italic':'');e.style.fontFamily=sf=='Default'?'':`'${sf}'`;const rb=row.querySelectorAll('.rs button')[+row.querySelector('.rsv').value];row.querySelector('.srs').textContent=rb?rb.textContent:''}{const m=row.querySelector('.cm').value,d=row.querySelector('.cd').value;row.querySelector('.pm').style.background=m;row.querySelector('.pd').style.background=d;row.querySelector('.sp').textContent=m.toUpperCase()+' | '+d.toUpperCase()}row.querySelector('.chb').style.background=b;row.querySelector('.sh').textContent=h.toUpperCase();row.querySelector('.sb').textContent=b.toUpperCase();
+ row.querySelector('.hh').textContent=h.toUpperCase();row.querySelector('.hb').textContent=b.toUpperCase();row.querySelector('.chh').style.background=h;{row.querySelector('.chg').style.background=h;const i=+row.querySelector('.pat').value,tf=row.querySelector('.tf:not(.sf)').value;row.querySelector('.shd').textContent=[i<0?'No pattern':PATS[i].n.replace(' jaali',''),Math.round(row.querySelector('.op').value*100)+'%',row.querySelector('.ts').value+'px',tf=='Default'?'':tf].filter(Boolean).join(' · ')}{const sf=row.querySelector('.sf').value,e=row.querySelector('.ssf'),w=row.querySelector('[data-for=sw2] .on'),it=row.querySelector('.si').value;e.textContent=sf+(w&&w.dataset.w?' · '+w.textContent:'')+(it?' · Italic':'');e.style.fontFamily=sf=='Default'?'':`'${sf}'`;const rb=row.querySelectorAll('.rs button')[+row.querySelector('.rsv').value];row.querySelector('.srs').textContent=rb?rb.textContent:''}{const m=row.querySelector('.cm').value,d=row.querySelector('.cd').value;row.querySelector('.pm').style.background=m;row.querySelector('.pd').style.background=d;row.querySelector('.sp').textContent=m.toUpperCase()+' | '+d.toUpperCase()}row.querySelector('.chb').style.background=b;row.querySelector('.sh').textContent=h.toUpperCase();row.querySelector('.sb').textContent=b.toUpperCase();
  const hl=lum(h)>.6,bl=lum(b)>.6;
  return `.hdr{background:${h}!important;color:${hl?'#14365F':'#fff'}!important}`+((hl&&row.querySelector('.cpt').value.toUpperCase()=='#FFFFFF')?'.hdr::before{filter:invert(1)}':'')+
  `.pband{background:${b}!important;border-color:${mix(b,1)}!important;color:${bl?'#1B2430':'#fff'}}`+
