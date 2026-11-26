@@ -207,6 +207,29 @@
   .colL .val .nm,.mci .nm,.df .nm{margin-left:18px!important}
   .df .top{column-gap:0!important;gap:0!important}
   .df .num small{font-size:12px;font-weight:500;margin-left:4px;color:var(--ink)}
+  /* DF: one dumbbell line per location, six climate-zone points C1-C6 */
+  .zl{margin-top:8px}
+  .zr{display:grid;grid-template-columns:128px 1fr;align-items:center;height:24px}
+  .zn{font-size:10.5px;color:var(--mute);white-space:nowrap}
+  .zt{position:relative;height:4px;background:#DCE1E7;border-radius:2px;margin:0 8px}
+  .zb{position:absolute;top:-1px;height:6px;border-radius:3px;background:#B5452F}
+  .zd{position:absolute;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#fff;border:2px solid #B5452F;box-sizing:border-box}
+  .zd em{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);font-style:normal;font-size:9px;font-weight:700;color:var(--mute);white-space:nowrap;line-height:1}
+  .zx{height:14px;align-items:start}
+  .za{display:flex;justify-content:space-between;font-size:9.5px;color:var(--mute);margin:0 8px;font-family:Consolas,monospace}
+  .zk{font-size:9.5px;color:var(--mute);margin-top:4px;text-align:center;white-space:nowrap}
+  /* room for the per-location DF lines */
+  .hdr{height:116px!important;padding-top:18px!important}
+  .badge{top:18px!important}
+  .idblk{bottom:12px!important}
+  .pband{padding-top:8px!important;padding-bottom:8px!important}
+  .card>.src{padding:6px 0 10px!important}
+  .cbody .colL>.sec:first-child,.cbody .colR>.sec:first-child{margin-top:8px!important}
+  .colR .sec{margin-top:8px!important}
+  .zl{margin-top:6px!important}
+  .zr{height:21px!important}
+  .zx{height:12px!important}
+  .zk{margin-top:2px!important}
 </style>
 </head>
 <body class="s2">
@@ -258,20 +281,21 @@
         </div>
         <div class="scale mono"><span>0.1 · Fully Linear</span><span>1.0 · Fully Circular</span></div>
       </div>
-      <div class="sec"><b>DEGRADATION</b><span><span class="ph">[climate zone]</span></span></div>
+      <div class="sec"><b>DEGRADATION</b><span>All six climate zones · by location</span></div>
       <div class="df" data-anchor="df">
         <div class="top">
           <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-          <div class="nm"><b>Degradation Factor (DF)</b><i>DF range for the family · <span class="ph">[location]</span></i></div>
+          <div class="nm"><b>Degradation Factor (DF)</b><i>DF range for the family · dot = zone median</i></div>
           <div class="num"><span class="ph">[0.0]</span> – <span class="ph">[0.0]</span><small class="mono">% / year</small></div>
         </div>
-        <div class="bar">
-          <div class="band" style="left:20%;width:35%"></div>
-          <div class="mark" style="left:20%"><em>[min]</em></div>
-          <div class="mark up" style="left:35%"><em>[median]</em></div>
-          <div class="mark" style="left:55%"><em>[max]</em></div>
+        <div class="zl">
+        <div class="zr"><span class="zn">Outdoor, rain-exposed</span><div class="zt"><div class="zb" style="left:14%;width:40%"></div><i class="zd" style="left:54%"><em>C1</em></i><i class="zd" style="left:14%"><em>C2</em></i><i class="zd" style="left:38%"><em>C3</em></i><i class="zd" style="left:46%"><em>C4</em></i><i class="zd" style="left:22%"><em>C5</em></i><i class="zd" style="left:30%"><em>C6</em></i></div></div>
+        <div class="zr"><span class="zn">Outdoor, sheltered</span><div class="zt"><div class="zb" style="left:30%;width:40%"></div><i class="zd" style="left:70%"><em>C1</em></i><i class="zd" style="left:30%"><em>C2</em></i><i class="zd" style="left:54%"><em>C3</em></i><i class="zd" style="left:62%"><em>C4</em></i><i class="zd" style="left:46%"><em>C5</em></i><i class="zd" style="left:38%"><em>C6</em></i></div></div>
+        <div class="zr"><span class="zn">Indoor</span><div class="zt"><div class="zb" style="left:58%;width:30%"></div><i class="zd" style="left:70%"><em>C1</em></i><i class="zd" style="left:64%"><em>C2</em></i><i class="zd" style="left:58%"><em>C3</em></i><i class="zd" style="left:76%"><em>C4</em></i><i class="zd" style="left:82%"><em>C5</em></i><i class="zd" style="left:88%"><em>C6</em></i></div></div>
+        <div class="zr"><span class="zn">Buried or in soil</span><div class="zt"><div class="zb" style="left:20%;width:35%"></div><i class="zd" style="left:34%"><em>C1</em></i><i class="zd" style="left:20%"><em>C2</em></i><i class="zd" style="left:27%"><em>C3</em></i><i class="zd" style="left:41%"><em>C4</em></i><i class="zd" style="left:55%"><em>C5</em></i><i class="zd" style="left:48%"><em>C6</em></i></div></div>
+        <div class="zr zx"><span class="zn"></span><div class="za"><span>0 % / year</span><span><span class="ph">[scale end]</span> % / year</span></div></div>
+        <div class="zk">C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront</div>
         </div>
-        <div class="scale mono"><span>0 % / year · As New</span><span><span class="ph">[scale end]</span> % / year</span></div>
       </div>
      </div>
     </div>
