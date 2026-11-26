@@ -200,6 +200,13 @@
   .colL .val .nm,.mci .nm,.df .nm{margin-left:18px!important}
   .df .top{column-gap:0!important;gap:0!important}
   .df{column-gap:0!important}
+  /* DF box with a range bar, like the MCI box */
+  .df{display:block!important;padding:10px 16px 8px!important}
+  .df .top{display:flex;align-items:center}
+  .df .bar{background:linear-gradient(90deg,#1E8A58 0%,#E8C547 50%,#C0392B 100%)}
+  .df .band{border-color:#7A2A1C}
+  .s4 .df .scale{margin-top:22px}
+  .pband{grid-template-columns:1fr 1.2fr!important}
 </style>
 </head>
 <body class="s4">
@@ -250,9 +257,17 @@
       </div>
       <div class="sec"><b>DEGRADATION</b><span><span class="ph">[climate zone]</span> · <span class="ph">[location]</span></span></div>
       <div class="df" data-anchor="df">
-        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <div class="nm"><b>Degradation Factor (DF)</b><i>rate of degradation per year of service</i></div>
-        <div class="num"><span class="ph">[0.0]</span> – <span class="ph">[0.0]</span><small class="mono">% / year</small></div>
+        <div class="top">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div class="nm"><b>Degradation Factor (DF)</b><i>rate of degradation per year of service</i></div>
+          <div class="num"><span class="ph">[0.0]</span> – <span class="ph">[0.0]</span><small class="mono">% / year</small></div>
+        </div>
+        <div class="bar">
+          <div class="band" style="left:20%;width:35%"></div>
+          <div class="mark" style="left:20%"><em>[min]</em></div>
+          <div class="mark" style="left:55%"><em>[max]</em></div>
+        </div>
+        <div class="scale mono"><span>0 % / year · As New</span><span><span class="ph">[scale end]</span> % / year</span></div>
       </div>
      </div>
     </div>
