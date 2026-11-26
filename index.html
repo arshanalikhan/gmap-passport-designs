@@ -322,6 +322,25 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
   .zr{height:21px!important}
   .zx{height:12px!important}
   .zk{margin-top:2px!important}
+  /* DF: location tabs (no script) + one dumbbell line with C1-C6 and the average */
+  .lt{margin-top:8px}
+  .lt input{position:absolute;opacity:0;pointer-events:none}
+  .lt label{display:inline-block;font-size:10px;line-height:1;padding:4px 8px;margin:0 4px 0 0;border:1px solid rgba(0,0,0,.18);border-radius:999px;color:var(--mute);cursor:pointer;background:#fff}
+  .lt input:checked+label{background:#B5452F;border-color:#B5452F;color:#fff;font-weight:700}
+  .lt input:focus-visible+label{outline:2px solid var(--navy);outline-offset:1px}
+  .lp{display:none}
+  #dfl0:checked~.lp0{display:block}
+  #dfl1:checked~.lp1{display:block}
+  #dfl2:checked~.lp2{display:block}
+  #dfl3:checked~.lp3{display:block}
+  #dfl4:checked~.lp4{display:block}
+  .lp .bar{margin-top:24px!important}
+  .lp .bar .zd{z-index:1}
+  .lp .bar .zd em{top:10px;bottom:auto}
+  .lp .bar .mark.up{z-index:2}
+  .df .lp+.lp{margin:0}
+  .df .scale{margin-top:20px!important}
+  .df .zk{margin-top:3px}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class=&quot;s2&quot;&gt;
@@ -380,14 +399,20 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
           &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Degradation Factor (DF)&lt;/b&gt;&lt;i&gt;DF range for the family · dot = zone median&lt;/i&gt;&lt;/div&gt;
           &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;% / year&lt;/small&gt;&lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;zl&quot;&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Outdoor, rain-exposed&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:14%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:54%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:14%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:38%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:22%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Outdoor, sheltered&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:30%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:70%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:54%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:62%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:38%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Indoor&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:58%;width:30%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:70%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:64%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:58%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:76%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:82%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:88%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Buried or in soil&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:20%;width:35%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:34%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:27%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:41%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:55%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:48%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr zx&quot;&gt;&lt;span class=&quot;zn&quot;&gt;&lt;/span&gt;&lt;div class=&quot;za&quot;&gt;&lt;span&gt;0 % / year&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;ph&quot;&gt;[scale end]&lt;/span&gt; % / year&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zk&quot;&gt;C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront&lt;/div&gt;
+        &lt;div class=&quot;lt&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl0&quot; checked&gt;&lt;label for=&quot;dfl0&quot;&gt;Average of locations&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl1&quot;&gt;&lt;label for=&quot;dfl1&quot;&gt;Outdoor · rain-exposed&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl2&quot;&gt;&lt;label for=&quot;dfl2&quot;&gt;Outdoor · sheltered&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl3&quot;&gt;&lt;label for=&quot;dfl3&quot;&gt;Indoor&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl4&quot;&gt;&lt;label for=&quot;dfl4&quot;&gt;Buried or in soil&lt;/label&gt;
+        &lt;div class=&quot;lp lp0&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:22%;width:36%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:22%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:34%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:40%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:28%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:58%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:38.0%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp1&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:12%;width:28%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:12%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:25%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:16%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:40%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:23.8%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp2&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:30%;width:34%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:52%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:41%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:48%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:36%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:64%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:45.2%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp3&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:50%;width:30%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:62%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:56%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:50%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:68%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:74%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:80%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:65.0%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp4&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:20%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:36%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:27%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:44%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:52%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:60%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:39.8%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
         &lt;/div&gt;
+        &lt;div class=&quot;scale mono&quot;&gt;&lt;span&gt;0 % / year&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;ph&quot;&gt;[scale end]&lt;/span&gt; % / year&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;zk&quot;&gt;C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront&lt;/div&gt;
       &lt;/div&gt;
      &lt;/div&gt;
     &lt;/div&gt;
@@ -636,6 +661,25 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
   .zr{height:21px!important}
   .zx{height:12px!important}
   .zk{margin-top:2px!important}
+  /* DF: location tabs (no script) + one dumbbell line with C1-C6 and the average */
+  .lt{margin-top:8px}
+  .lt input{position:absolute;opacity:0;pointer-events:none}
+  .lt label{display:inline-block;font-size:10px;line-height:1;padding:4px 8px;margin:0 4px 0 0;border:1px solid rgba(0,0,0,.18);border-radius:999px;color:var(--mute);cursor:pointer;background:#fff}
+  .lt input:checked+label{background:#B5452F;border-color:#B5452F;color:#fff;font-weight:700}
+  .lt input:focus-visible+label{outline:2px solid var(--navy);outline-offset:1px}
+  .lp{display:none}
+  #dfl0:checked~.lp0{display:block}
+  #dfl1:checked~.lp1{display:block}
+  #dfl2:checked~.lp2{display:block}
+  #dfl3:checked~.lp3{display:block}
+  #dfl4:checked~.lp4{display:block}
+  .lp .bar{margin-top:24px!important}
+  .lp .bar .zd{z-index:1}
+  .lp .bar .zd em{top:10px;bottom:auto}
+  .lp .bar .mark.up{z-index:2}
+  .df .lp+.lp{margin:0}
+  .df .scale{margin-top:20px!important}
+  .df .zk{margin-top:3px}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class=&quot;s2&quot;&gt;
@@ -695,14 +739,20 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
           &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Degradation Factor (DF)&lt;/b&gt;&lt;i&gt;DF range for the material · dot = zone median&lt;/i&gt;&lt;/div&gt;
           &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;% / year&lt;/small&gt;&lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;zl&quot;&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Outdoor, rain-exposed&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:14%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:54%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:14%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:38%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:22%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Outdoor, sheltered&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:30%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:70%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:54%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:62%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:38%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Indoor&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:58%;width:30%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:70%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:64%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:58%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:76%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:82%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:88%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Buried or in soil&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:20%;width:35%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:34%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:27%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:41%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:55%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:48%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr zx&quot;&gt;&lt;span class=&quot;zn&quot;&gt;&lt;/span&gt;&lt;div class=&quot;za&quot;&gt;&lt;span&gt;0 % / year&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;ph&quot;&gt;[scale end]&lt;/span&gt; % / year&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zk&quot;&gt;C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront&lt;/div&gt;
+        &lt;div class=&quot;lt&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl0&quot; checked&gt;&lt;label for=&quot;dfl0&quot;&gt;Average of locations&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl1&quot;&gt;&lt;label for=&quot;dfl1&quot;&gt;Outdoor · rain-exposed&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl2&quot;&gt;&lt;label for=&quot;dfl2&quot;&gt;Outdoor · sheltered&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl3&quot;&gt;&lt;label for=&quot;dfl3&quot;&gt;Indoor&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl4&quot;&gt;&lt;label for=&quot;dfl4&quot;&gt;Buried or in soil&lt;/label&gt;
+        &lt;div class=&quot;lp lp0&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:22%;width:36%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:22%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:34%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:40%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:28%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:58%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:38.0%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp1&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:12%;width:28%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:12%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:25%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:16%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:40%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:23.8%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp2&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:30%;width:34%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:52%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:41%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:48%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:36%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:64%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:45.2%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp3&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:50%;width:30%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:62%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:56%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:50%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:68%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:74%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:80%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:65.0%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp4&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:20%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:36%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:27%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:44%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:52%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:60%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:39.8%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
         &lt;/div&gt;
+        &lt;div class=&quot;scale mono&quot;&gt;&lt;span&gt;0 % / year&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;ph&quot;&gt;[scale end]&lt;/span&gt; % / year&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;zk&quot;&gt;C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront&lt;/div&gt;
       &lt;/div&gt;
      &lt;/div&gt;
     &lt;/div&gt;
@@ -951,6 +1001,25 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
   .zr{height:21px!important}
   .zx{height:12px!important}
   .zk{margin-top:2px!important}
+  /* DF: location tabs (no script) + one dumbbell line with C1-C6 and the average */
+  .lt{margin-top:8px}
+  .lt input{position:absolute;opacity:0;pointer-events:none}
+  .lt label{display:inline-block;font-size:10px;line-height:1;padding:4px 8px;margin:0 4px 0 0;border:1px solid rgba(0,0,0,.18);border-radius:999px;color:var(--mute);cursor:pointer;background:#fff}
+  .lt input:checked+label{background:#B5452F;border-color:#B5452F;color:#fff;font-weight:700}
+  .lt input:focus-visible+label{outline:2px solid var(--navy);outline-offset:1px}
+  .lp{display:none}
+  #dfl0:checked~.lp0{display:block}
+  #dfl1:checked~.lp1{display:block}
+  #dfl2:checked~.lp2{display:block}
+  #dfl3:checked~.lp3{display:block}
+  #dfl4:checked~.lp4{display:block}
+  .lp .bar{margin-top:24px!important}
+  .lp .bar .zd{z-index:1}
+  .lp .bar .zd em{top:10px;bottom:auto}
+  .lp .bar .mark.up{z-index:2}
+  .df .lp+.lp{margin:0}
+  .df .scale{margin-top:20px!important}
+  .df .zk{margin-top:3px}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class=&quot;s4&quot;&gt;
@@ -1006,14 +1075,20 @@ select.tf[size] option:checked{background:#FFF1C7;color:#14365F}
           &lt;div class=&quot;nm&quot;&gt;&lt;b&gt;Degradation Factor (DF)&lt;/b&gt;&lt;i&gt;rate of degradation per year of service&lt;/i&gt;&lt;/div&gt;
           &lt;div class=&quot;num&quot;&gt;&lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt; – &lt;span class=&quot;ph&quot;&gt;[0.0]&lt;/span&gt;&lt;small class=&quot;mono&quot;&gt;% / year&lt;/small&gt;&lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;zl&quot;&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Outdoor, rain-exposed&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:14%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:54%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:14%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:38%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:22%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Outdoor, sheltered&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:30%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:70%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:54%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:62%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:38%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Indoor&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:58%;width:30%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:70%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:64%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:58%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:76%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:82%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:88%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr&quot;&gt;&lt;span class=&quot;zn&quot;&gt;Buried or in soil&lt;/span&gt;&lt;div class=&quot;zt&quot;&gt;&lt;div class=&quot;zb&quot; style=&quot;left:20%;width:35%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:34%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:27%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:41%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:55%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:48%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zr zx&quot;&gt;&lt;span class=&quot;zn&quot;&gt;&lt;/span&gt;&lt;div class=&quot;za&quot;&gt;&lt;span&gt;0 % / year&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;ph&quot;&gt;[scale end]&lt;/span&gt; % / year&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;div class=&quot;zk&quot;&gt;C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront&lt;/div&gt;
+        &lt;div class=&quot;lt&quot;&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl0&quot; checked&gt;&lt;label for=&quot;dfl0&quot;&gt;Average of locations&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl1&quot;&gt;&lt;label for=&quot;dfl1&quot;&gt;Outdoor · rain-exposed&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl2&quot;&gt;&lt;label for=&quot;dfl2&quot;&gt;Outdoor · sheltered&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl3&quot;&gt;&lt;label for=&quot;dfl3&quot;&gt;Indoor&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;dfloc&quot; id=&quot;dfl4&quot;&gt;&lt;label for=&quot;dfl4&quot;&gt;Buried or in soil&lt;/label&gt;
+        &lt;div class=&quot;lp lp0&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:22%;width:36%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:46%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:22%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:34%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:40%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:28%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:58%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:38.0%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp1&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:12%;width:28%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:12%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:25%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:16%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:40%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:23.8%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp2&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:30%;width:34%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:52%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:30%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:41%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:48%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:36%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:64%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:45.2%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp3&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:50%;width:30%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:62%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:56%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:50%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:68%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:74%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:80%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:65.0%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;lp lp4&quot;&gt;&lt;div class=&quot;bar&quot;&gt;&lt;div class=&quot;band&quot; style=&quot;left:20%;width:40%&quot;&gt;&lt;/div&gt;&lt;i class=&quot;zd&quot; style=&quot;left:36%&quot;&gt;&lt;em&gt;C1&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:20%&quot;&gt;&lt;em&gt;C2&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:27%&quot;&gt;&lt;em&gt;C3&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:44%&quot;&gt;&lt;em&gt;C4&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:52%&quot;&gt;&lt;em&gt;C5&lt;/em&gt;&lt;/i&gt;&lt;i class=&quot;zd&quot; style=&quot;left:60%&quot;&gt;&lt;em&gt;C6&lt;/em&gt;&lt;/i&gt;&lt;div class=&quot;mark up&quot; style=&quot;left:39.8%&quot;&gt;&lt;em&gt;avg&lt;/em&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
         &lt;/div&gt;
+        &lt;div class=&quot;scale mono&quot;&gt;&lt;span&gt;0 % / year&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;ph&quot;&gt;[scale end]&lt;/span&gt; % / year&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;zk&quot;&gt;C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront&lt;/div&gt;
       &lt;/div&gt;
      &lt;/div&gt;
     &lt;/div&gt;
@@ -1700,7 +1775,7 @@ function css(m,d){return `.mci{background:${mix(m,.08)}!important;border-color:$
 .mci .bar{background:linear-gradient(90deg,#B8BEC6 0%,${m}66 50%,${m} 100%)!important}.mci .band{border-color:${m}!important}
 .df{background:${mix(d,.08)}!important;border-color:${mix(d,.35)}!important}
 .df .ic{background:${d}!important}.df .num{color:${d}!important}
-.df .bar{background:linear-gradient(90deg,${mix(d,.15)} 0%,${d}88 50%,${d} 100%)!important}.df .band{border-color:${d}!important}.df .zb{background:${d}!important}.df .zd{border-color:${d}!important}`}
+.df .bar{background:linear-gradient(90deg,${mix(d,.15)} 0%,${d}88 50%,${d} 100%)!important}.df .band{border-color:${d}!important}.df .zb{background:${d}!important}.df .zd{border-color:${d}!important}.df .lt input:checked+label{background:${d}!important;border-color:${d}!important}`}
 function paint(row){const m=row.querySelector('.cm').value,d=row.querySelector('.cd').value;
  row.querySelector('.hm').textContent=m.toUpperCase();row.querySelector('.hd').textContent=d.toUpperCase();
  const doc=row.querySelector('iframe').contentDocument;if(!doc||!doc.head)return;

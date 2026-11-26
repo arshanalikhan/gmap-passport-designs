@@ -230,6 +230,25 @@
   .zr{height:21px!important}
   .zx{height:12px!important}
   .zk{margin-top:2px!important}
+  /* DF: location tabs (no script) + one dumbbell line with C1-C6 and the average */
+  .lt{margin-top:8px}
+  .lt input{position:absolute;opacity:0;pointer-events:none}
+  .lt label{display:inline-block;font-size:10px;line-height:1;padding:4px 8px;margin:0 4px 0 0;border:1px solid rgba(0,0,0,.18);border-radius:999px;color:var(--mute);cursor:pointer;background:#fff}
+  .lt input:checked+label{background:#B5452F;border-color:#B5452F;color:#fff;font-weight:700}
+  .lt input:focus-visible+label{outline:2px solid var(--navy);outline-offset:1px}
+  .lp{display:none}
+  #dfl0:checked~.lp0{display:block}
+  #dfl1:checked~.lp1{display:block}
+  #dfl2:checked~.lp2{display:block}
+  #dfl3:checked~.lp3{display:block}
+  #dfl4:checked~.lp4{display:block}
+  .lp .bar{margin-top:24px!important}
+  .lp .bar .zd{z-index:1}
+  .lp .bar .zd em{top:10px;bottom:auto}
+  .lp .bar .mark.up{z-index:2}
+  .df .lp+.lp{margin:0}
+  .df .scale{margin-top:20px!important}
+  .df .zk{margin-top:3px}
 </style>
 </head>
 <body class="s4">
@@ -285,14 +304,20 @@
           <div class="nm"><b>Degradation Factor (DF)</b><i>rate of degradation per year of service</i></div>
           <div class="num"><span class="ph">[0.0]</span> – <span class="ph">[0.0]</span><small class="mono">% / year</small></div>
         </div>
-        <div class="zl">
-        <div class="zr"><span class="zn">Outdoor, rain-exposed</span><div class="zt"><div class="zb" style="left:14%;width:40%"></div><i class="zd" style="left:54%"><em>C1</em></i><i class="zd" style="left:14%"><em>C2</em></i><i class="zd" style="left:38%"><em>C3</em></i><i class="zd" style="left:46%"><em>C4</em></i><i class="zd" style="left:22%"><em>C5</em></i><i class="zd" style="left:30%"><em>C6</em></i></div></div>
-        <div class="zr"><span class="zn">Outdoor, sheltered</span><div class="zt"><div class="zb" style="left:30%;width:40%"></div><i class="zd" style="left:70%"><em>C1</em></i><i class="zd" style="left:30%"><em>C2</em></i><i class="zd" style="left:54%"><em>C3</em></i><i class="zd" style="left:62%"><em>C4</em></i><i class="zd" style="left:46%"><em>C5</em></i><i class="zd" style="left:38%"><em>C6</em></i></div></div>
-        <div class="zr"><span class="zn">Indoor</span><div class="zt"><div class="zb" style="left:58%;width:30%"></div><i class="zd" style="left:70%"><em>C1</em></i><i class="zd" style="left:64%"><em>C2</em></i><i class="zd" style="left:58%"><em>C3</em></i><i class="zd" style="left:76%"><em>C4</em></i><i class="zd" style="left:82%"><em>C5</em></i><i class="zd" style="left:88%"><em>C6</em></i></div></div>
-        <div class="zr"><span class="zn">Buried or in soil</span><div class="zt"><div class="zb" style="left:20%;width:35%"></div><i class="zd" style="left:34%"><em>C1</em></i><i class="zd" style="left:20%"><em>C2</em></i><i class="zd" style="left:27%"><em>C3</em></i><i class="zd" style="left:41%"><em>C4</em></i><i class="zd" style="left:55%"><em>C5</em></i><i class="zd" style="left:48%"><em>C6</em></i></div></div>
-        <div class="zr zx"><span class="zn"></span><div class="za"><span>0 % / year</span><span><span class="ph">[scale end]</span> % / year</span></div></div>
-        <div class="zk">C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront</div>
+        <div class="lt">
+        <input type="radio" name="dfloc" id="dfl0" checked><label for="dfl0">Average of locations</label>
+        <input type="radio" name="dfloc" id="dfl1"><label for="dfl1">Outdoor · rain-exposed</label>
+        <input type="radio" name="dfloc" id="dfl2"><label for="dfl2">Outdoor · sheltered</label>
+        <input type="radio" name="dfloc" id="dfl3"><label for="dfl3">Indoor</label>
+        <input type="radio" name="dfloc" id="dfl4"><label for="dfl4">Buried or in soil</label>
+        <div class="lp lp0"><div class="bar"><div class="band" style="left:22%;width:36%"></div><i class="zd" style="left:46%"><em>C1</em></i><i class="zd" style="left:22%"><em>C2</em></i><i class="zd" style="left:34%"><em>C3</em></i><i class="zd" style="left:40%"><em>C4</em></i><i class="zd" style="left:28%"><em>C5</em></i><i class="zd" style="left:58%"><em>C6</em></i><div class="mark up" style="left:38.0%"><em>avg</em></div></div></div>
+        <div class="lp lp1"><div class="bar"><div class="band" style="left:12%;width:28%"></div><i class="zd" style="left:30%"><em>C1</em></i><i class="zd" style="left:12%"><em>C2</em></i><i class="zd" style="left:20%"><em>C3</em></i><i class="zd" style="left:25%"><em>C4</em></i><i class="zd" style="left:16%"><em>C5</em></i><i class="zd" style="left:40%"><em>C6</em></i><div class="mark up" style="left:23.8%"><em>avg</em></div></div></div>
+        <div class="lp lp2"><div class="bar"><div class="band" style="left:30%;width:34%"></div><i class="zd" style="left:52%"><em>C1</em></i><i class="zd" style="left:30%"><em>C2</em></i><i class="zd" style="left:41%"><em>C3</em></i><i class="zd" style="left:48%"><em>C4</em></i><i class="zd" style="left:36%"><em>C5</em></i><i class="zd" style="left:64%"><em>C6</em></i><div class="mark up" style="left:45.2%"><em>avg</em></div></div></div>
+        <div class="lp lp3"><div class="bar"><div class="band" style="left:50%;width:30%"></div><i class="zd" style="left:62%"><em>C1</em></i><i class="zd" style="left:56%"><em>C2</em></i><i class="zd" style="left:50%"><em>C3</em></i><i class="zd" style="left:68%"><em>C4</em></i><i class="zd" style="left:74%"><em>C5</em></i><i class="zd" style="left:80%"><em>C6</em></i><div class="mark up" style="left:65.0%"><em>avg</em></div></div></div>
+        <div class="lp lp4"><div class="bar"><div class="band" style="left:20%;width:40%"></div><i class="zd" style="left:36%"><em>C1</em></i><i class="zd" style="left:20%"><em>C2</em></i><i class="zd" style="left:27%"><em>C3</em></i><i class="zd" style="left:44%"><em>C4</em></i><i class="zd" style="left:52%"><em>C5</em></i><i class="zd" style="left:60%"><em>C6</em></i><div class="mark up" style="left:39.8%"><em>avg</em></div></div></div>
         </div>
+        <div class="scale mono"><span>0 % / year</span><span><span class="ph">[scale end]</span> % / year</span></div>
+        <div class="zk">C1 Hot-Dry · C2 Cold · C3 Temperate · C4 Composite · C5 Warm-Humid inland · C6 Warm-Humid shorefront</div>
       </div>
      </div>
     </div>
